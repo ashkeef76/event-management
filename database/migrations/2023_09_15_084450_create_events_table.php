@@ -1,6 +1,5 @@
 <?php
 
-use App\Models\Organizer;
 use App\Models\User;
 use App\Models\Venue;
 use Illuminate\Database\Migrations\Migration;
@@ -17,7 +16,6 @@ return new class extends Migration
         Schema::create('events', function (Blueprint $table) {
             $table->id();
             $table->foreignIdFor(User::class);
-            $table->foreignIdFor(Organizer::class);
             $table->foreignIdFor(Venue::class);
             $table->string('name');
             $table->text('description')->nullable();

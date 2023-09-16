@@ -12,8 +12,11 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-         \App\Models\User::factory(10)->create();
+         \App\Models\User::factory(200)->create();
+         \App\Models\Venue::factory(10)->create();
 
+$this->call(EventSeeder::class);
+$this->call(AttendeeSeeder::class);
         // \App\Models\User::factory()->create([
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
