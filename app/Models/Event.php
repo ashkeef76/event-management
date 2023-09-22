@@ -10,7 +10,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 class Event extends Model
 {
     use HasFactory;
-
+    public $fillable = ['name','description','start_time','end_time','user_id','venue_id','image_url'];
     public function user():BelongsTo
     {
         return $this->belongsTo(User::class);
@@ -25,8 +25,5 @@ class Event extends Model
         return $this->belongsTo(Venue::class);
 
     }
-    public function Organizer():BelongsTo
-    {
-        return $this->belongsTo(Organizer::class);
-    }
+   
 }
